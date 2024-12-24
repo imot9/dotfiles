@@ -1,0 +1,29 @@
+{
+  // General Settings
+  "layer": "top",
+  "margin-top": 14,
+  "margin-bottom": 0,
+  "margin-left": 14,
+  "margin-right": 14,    
+  "spacing": 0,
+
+  "modules-left": [
+    "custom/arch",
+    "group/hardware",
+    "custom/updates",
+  ],
+  "modules-center": [
+    "hyprland/workspaces",
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "network",
+    "battery",
+    "custom/power",
+    "clock",
+  ],
+
+  // Modules
+  "include" : ["~/.config/waybar/modules.json"] 
+}
