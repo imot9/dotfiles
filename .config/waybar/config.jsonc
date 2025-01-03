@@ -11,6 +11,7 @@
     "custom/arch",
     "group/hardware",
     "custom/updates",
+    "custom/wallpaper",
   ],
   "modules-center": [
     "hyprland/workspaces",
