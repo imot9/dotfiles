@@ -5,8 +5,9 @@ final_space = true
 [palette]
   grey = '#6c6c6c'
   red = '#722F37'
-  magenta = '#8b008b'
-  blue = '#6F8FAF' 
+  path = '$color1' 
+  prompt = '$color2'
+  timer = '$color7'
 
 [secondary_prompt]
   template = '❱❱ '
@@ -16,7 +17,7 @@ final_space = true
 [transient_prompt]
   template = '❱ '
   background = 'transparent'
-  foreground_templates = ['{{ if gt .Code 0 }}p:red{{ end }}', '{{ if eq .Code 0 }}p:magenta{{ end }}']
+  foreground_templates = ['{{ if gt .Code 0 }}p:red{{ end }}', '{{ if eq .Code 0 }}p:prompt{{ end }}']
 
 [[blocks]]
   type = 'prompt'
@@ -25,7 +26,7 @@ final_space = true
 
   [[blocks.segments]]
     template = '{{ .Path }}'
-    foreground = 'p:blue'
+    foreground = 'p:path'
     background = 'transparent'
     type = 'path'
     style = 'plain'
@@ -52,7 +53,7 @@ final_space = true
 
   [[blocks.segments]]
     template = '{{ .FormattedMs }}'
-    foreground = 'yellow'
+    foreground = 'p:timer'
     background = 'transparent'
     type = 'executiontime'
     style = 'plain'
@@ -72,7 +73,7 @@ final_space = true
     background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = ['{{ if gt .Code 0 }}p:red{{ end }}', '{{ if eq .Code 0 }}p:magenta{{ end }}']
+    foreground_templates = ['{{ if gt .Code 0 }}p:red{{ end }}', '{{ if eq .Code 0 }}p:prompt{{ end }}']
 
     [blocks.segments.properties]
       cache_duration = 'none'

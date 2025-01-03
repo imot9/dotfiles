@@ -24,14 +24,28 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
-# completion
+## highlight
+grey="6c6c6c"
+red="#722F37"
+green="#2E8B57"
+blue="#6F8FAF"
+magenta="#8b008b"
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=${green},underline
+ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=${red},underline
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=${green},underline
+ZSH_HIGHLIGHT_STYLES[command]=fg=${green},underline
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=${blue}
+
+## completion
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview "ls --color $realpath"
 
-# search
+## search
 eval "$(fzf --zsh)"
 
 # init & load OMP
@@ -55,3 +69,6 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Created by `pipx` on 2025-01-03 08:18:56
+export PATH="$PATH:/home/tomi/.local/bin"
