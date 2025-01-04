@@ -9,9 +9,9 @@
 
   "modules-left": [
     "custom/arch",
-    "group/hardware",
     "custom/updates",
     "custom/wallpaper",
+    "group/hardware",
   ],
   "modules-center": [
     "hyprland/workspaces",
@@ -21,7 +21,7 @@
     "backlight",
     "network",
     "battery",
-    "custom/power",
+    "group/power",
     "clock",
   ],
 
