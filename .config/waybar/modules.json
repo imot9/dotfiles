@@ -19,10 +19,9 @@
   },
 
   "clock": {
-    "timezone": "Europe/Budapest",
-    "format" : "{:%H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format": "{:%H:%M}  ",
+    "format-alt": "{:%A, %B %d, %Y (%R)} ",
+    "tooltip-format": "<big>{:%Y %B \t   week: %V }</big>\n<tt>{calendar}</tt>",
   },
 
   "battery": {
