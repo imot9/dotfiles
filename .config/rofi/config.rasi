@@ -10,7 +10,7 @@ configuration {
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
     window-format:              "{w} · {c} · {t}";
-    
+    terminal:                   "kitty"; 
 }
 
 /* ---- Load pywal colors (custom wal template) ---- */
