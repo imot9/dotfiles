@@ -72,3 +72,5 @@ export LC_ALL=en_US.UTF-8
 
 # Created by `pipx` on 2025-01-03 08:18:56
 export PATH="$PATH:/home/tomi/.local/bin"
+
+neofetch
