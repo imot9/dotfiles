@@ -111,10 +111,6 @@ window#waybar.empty #window {
   color: @textcolor1;
 }
 
-/* -----------------------------------------------------
-* Clock
-* ----------------------------------------------------- */
-
 #clock {
   background-color: @workspacesbackground2;
   color: @textcolor1;
@@ -125,10 +121,6 @@ window#waybar.empty #window {
   border:3px solid @bordercolor;   
 }
 
-/* -----------------------------------------------------
-* Backlight
-* ----------------------------------------------------- */
-
 #backlight {
   background-color: @backgroundlight;
   color: @textcolor3;
@@ -137,10 +129,6 @@ window#waybar.empty #window {
   margin: 5px 15px 5px 0px;
   opacity:0.8;
 }
-
-/* -----------------------------------------------------
-* Pulseaudio
-* ----------------------------------------------------- */
 
 #pulseaudio {
   background-color: @backgroundlight;
@@ -154,10 +142,6 @@ window#waybar.empty #window {
   background-color: @backgrounddark;
   color: @textcolor1;
 }
-
-/* -----------------------------------------------------
-* Network
-* ----------------------------------------------------- */
 
 #network {
   background-color: @backgroundlight;
@@ -177,10 +161,6 @@ window#waybar.empty #window {
   background-color: @backgroundlight;
   color: @textcolor3;
 }
-
-/* -----------------------------------------------------
-* Battery
-* ----------------------------------------------------- */
 
 #battery {
   background-color: @backgroundlight;
@@ -226,9 +206,6 @@ to {
   color: @iconcolor;
   opacity: 0.8;
 }
-/* -----------------------------------------------------
-* Wallpaper
-* ----------------------------------------------------- */
 
 #custom-wallpaper {
   background-color: @backgroundlight;

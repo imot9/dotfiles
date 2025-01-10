@@ -70,7 +70,7 @@ setopt hist_find_no_dups
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# Created by `pipx` on 2025-01-03 08:18:56
-export PATH="$PATH:/home/tomi/.local/bin"
+# Pipx
+export PATH="$PATH:~/.local/bin"
 
 neofetch
