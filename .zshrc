@@ -73,4 +73,4 @@ export LC_ALL=en_US.UTF-8
 # Pipx
 export PATH="$PATH:~/.local/bin"
 
-neofetch
+fastfetch
