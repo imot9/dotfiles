@@ -3,26 +3,24 @@
   "layer": "top",
   "margin-top": 14,
   "margin-bottom": 0,
-  "margin-left": 14,
-  "margin-right": 14,    
+  "margin-left": 20,
+  "margin-right": 20,    
   "spacing": 0,
 
   "modules-left": [
     "custom/arch",
-    "custom/updates",
-    "custom/wallpaper",
-    "group/hardware",
-  ],
-  "modules-center": [
     "hyprland/workspaces",
   ],
+  "modules-center": [
+    "clock",
+  ],
   "modules-right": [
+    "group/hardware",
+    "custom/updates",
     "pulseaudio",
-    "backlight",
     "network",
     "battery",
-    "group/power",
-    "clock",
+    "custom/power",
   ],
 
   // Modules

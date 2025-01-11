@@ -1,16 +1,15 @@
 {
+  /* Modules - left */
   "custom/arch" : {
     "format" : "󰣇",
-    "tooltip" : true,
-    "tooltip-format" : "btw"
+    "tooltip" : false,
   },
 
-  // Workspaces
   "hyprland/workspaces": {
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{icon}",
+    "format": "{name}",
     "format-icons": {
       "urgent": "",
       "active": "",
@@ -18,35 +17,38 @@
     },
   },
 
+  /* Modules - middle */
   "clock": {
-    "format": "{:%H:%M}  ",
-    "format-alt": "{:%A, %B %d, %Y (%R)} ",
-    "tooltip-format": "<big>{:%Y %B \t   week: %V }</big>\n<tt>{calendar}</tt>",
+    "format": "  {:%I:%M %p}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
   },
 
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
+  /* Modules - right */
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer" : {
+      "click-to-reveal" : true,
+      "transition-left-to-right" : false,
     },
-    "format": "{icon} {capacity}%",
-    "format-full": "{icon}  {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "modules": [
+      "custom/system",
+      "disk",
+      "cpu",
+      "memory",
+      "temperature"
+    ]
   },
 
-  "network": {
-    "format-wifi": "   ({signalStrength}%)",
-    "format-ethernet": "   {ipaddr}/{cidr}",
-    "tooltip-format": "  {ifname} via {gwaddr}",
-    "format-linked": "  {ifname} (No IP)",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  "custom/updates": {
+    "format": " {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/scripts/updates.sh",
+    "interval": 1800,
   },
-
+  
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
     "format-bluetooth": "{icon}  {volume}% {format_source}",
     "format-bluetooth-muted": "   {icon} {format_source}",
     "format-muted": "   {format_source}",
@@ -61,89 +63,54 @@
     "on-click": "pavucontrol"
   },
 
-  "backlight" : {
-    "format" : "   {percent}%",
+  "network": {
+    "format-wifi": "   {signalStrength}%",
+    "format-ethernet": "   {ipaddr}/{cidr}",
+    "tooltip-format": "  {ifname} via {gwaddr}",
+    "format-linked": "  {ifname} (No IP)",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
 
-  "group/power": {
-    "orientation": "inherit",
-    "drawer": {
-        "transition-duration": 500,
-        "children-class": "not-power",
-        "transition-left-to-right": false,
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-    "modules": [
-        "custom/power", 
-        "custom/quit",
-        "custom/lock",
-        "custom/reboot",
-    ]
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "]
   },
 
-  "custom/quit": {
-      "format": "󰗼",
-      "tooltip": false,
-      "on-click": "hyprctl dispatch exit"
-  },
-  "custom/lock": {
-      "format": "󰍁",
-      "tooltip": false,
-      "on-click": "swaylock"
-  },
-  "custom/reboot": {
-      "format": "󰜉",
-      "tooltip": false,
-      "on-click": "reboot"
-  },
   "custom/power": {
       "format": "",
       "tooltip": false,
       "on-click": "shutdown now"
   },
 
-  // Updates Count
-  "custom/updates": {
-    "format": " {}",
-    "escape": true,
-    "return-type": "json",
-    "exec": "~/.config/scripts/updates.sh",
-    "interval": 1800,
+  // group/hardware
+  "custom/system" : {
+    "format" : ""
   },
 
-  "custom/wallpaper" : {
-    "format" : "",
-    "on-click" : "waypaper"
-  },
-
-  // CPU
   "cpu": {
-    "format": "/ C {usage}% ",
+    "format": "C {usage}%",
   },
 
-  // Memory
   "memory": {
-    "format": "/ M {}% ",
+    "format": "M {percentage}%",
   },
 
-  // Harddisc space used
   "disk": {
     "interval": 30,
-    "format": " D {percentage_used}% ",
+    "format": "D {percentage_used}%",
     "path": "/",
   },
 
   "temperature": {
     "critical-threshold": 80,
-    "format": "/ {temperatureC}°C",
-  },
-
-  "group/hardware": {
-    "orientation": "inherit",
-    "modules": [
-      "disk",
-      "cpu",
-      "memory",
-      "temperature"
-    ]
+    "format": "{temperatureC}°C",
   },
 }
