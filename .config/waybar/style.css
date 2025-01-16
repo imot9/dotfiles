@@ -25,6 +25,7 @@ window#waybar {
   transition-property: background;
   border-radius: 5px 5px 5px 5px;
   opacity: 0.8;
+  background: transparent;
   transition-duration: .5s;
 }
 
@@ -40,7 +41,7 @@ window#waybar.empty #window {
 }
 
 #workspaces {
-  background: @background;
+  background: transparent;
 }
 
 #workspaces button {
@@ -64,13 +65,6 @@ window#waybar.empty #window {
 }
 
 /* Modules - right */
-#custom-system {
-  padding: 5px 15px 5px 15px;
-  margin: 6px 3px 6px 3px;
-  border-radius: 5px;
-  background: @box5;
-}
-
 #custom-updates {
   padding: 5px 15px 5px 15px;
   margin: 6px 3px 6px 3px;
@@ -112,16 +106,10 @@ window#waybar.empty #window {
   animation-direction: alternate;
 }
 
-#custom-power {
+#custom-control {
   padding: 5px 15px 5px 15px;
   margin: 6px 3px 6px 3px;
   border-radius: 5px;
   background: @activeworkspace;
-}
-
-#disk, #memory, #cpu, #temperature {
-  padding: 1px 5px 1px 5px;
-  margin: 7px 3px 7px 3px;
-  border-left: 1px solid @box5;
 }
 

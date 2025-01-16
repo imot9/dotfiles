@@ -1,3 +1,4 @@
 .config/nvim/.luarc.json
 .config/ohmyposh/format.toml.bak
 .config/backgrounds
+.config/swaync/style.css

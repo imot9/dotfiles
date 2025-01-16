@@ -24,21 +24,6 @@
   },
 
   /* Modules - right */
-  "group/hardware": {
-    "orientation": "inherit",
-    "drawer" : {
-      "click-to-reveal" : true,
-      "transition-left-to-right" : false,
-    },
-    "modules": [
-      "custom/system",
-      "disk",
-      "cpu",
-      "memory",
-      "temperature"
-    ]
-  },
-
   "custom/updates": {
     "format": " {}",
     "escape": true,
@@ -84,33 +69,13 @@
     "format-icons": [" ", " ", " ", " ", " "]
   },
 
-  "custom/power": {
-      "format": "",
-      "tooltip": false,
-      "on-click": "shutdown now"
-  },
-
-  // group/hardware
-  "custom/system" : {
-    "format" : ""
-  },
-
-  "cpu": {
-    "format": "C {usage}%",
-  },
-
-  "memory": {
-    "format": "M {percentage}%",
-  },
-
-  "disk": {
-    "interval": 30,
-    "format": "D {percentage_used}%",
-    "path": "/",
-  },
-
-  "temperature": {
-    "critical-threshold": 80,
-    "format": "{temperatureC}°C",
+  "custom/control": {
+    "tooltip": false,
+    "format": "",
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
   },
 }

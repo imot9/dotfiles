@@ -1,0 +1,240 @@
+@use "../../.cache/wal/colors.scss"; 
+
+$background: #000000;
+$border: colors.$color1;
+$noti-bg: rgba(colors.$color1, 0.7);
+$noti-bg-hover: rgba(colors.$color1, 1);
+$bg-selected: rgba(colors.$color1, 1);
+
+$noti-fg: #E5E9F0;
+$noti-bg-focus: #A3BE8C;
+$noti-close-bg: rgba(255, 255, 255, 0.1);
+$noti-close-bg-hover: rgba(255, 255, 255, 0.15);
+$noti-urgent: #BF616A;
+
+
+* {
+  color: $noti-fg;
+}
+
+.notification-row {
+  outline: none;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  background: $noti-bg-focus;
+}
+
+.notification {
+  border-radius: 5px;
+  margin: 6px 12px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
+    0 2px 6px 2px rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.critical {
+  background: $noti-urgent;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.close-button {
+  background: $noti-close-bg;
+  color: white;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 100%;
+  margin-top: 10px;
+  margin-right: 16px;
+  box-shadow: none;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: $noti-close-bg-hover;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: $noti-bg;
+  color: white;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  -gtk-icon-effect: none;
+  background: $noti-bg-hover;
+}
+
+.notification-default-action {
+  border-radius: 5px;
+}
+
+/* When alternative actions are visible */
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-action {
+  border-radius: 0px;
+  border-top: none;
+  border-right: none;
+}
+
+/* add bottom border radius to eliminate clipping */
+.notification-action:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.notification-action:last-child {
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid $border;
+}
+
+/* The "Notifications" and "Do Not Disturb" text widget */
+.top-action-title {
+  text-shadow: none;
+}
+
+.blank-window {
+  opacity: 0.9;
+}
+
+.control-center {
+  border-radius: 5px;
+  background-color: $background;
+  border: 0.5px solid $border;
+}
+
+/* Power button and drop-down menu */
+.widget-menubar > box > .menu-button-bar > button {
+  border: 0.5px solid $border;
+  background: transparent;
+  box-shadow: none;
+  margin: 8px 8px 3px 8px;
+  padding: 3px 8px 3px 8px;
+}
+
+.power-buttons {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.power-buttons > button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.power-buttons > button:hover {
+  background: $noti-bg-hover;
+}
+
+/* Wifi and Bluetooth grid and buttons */
+.widget-buttons-grid {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 5px;
+  background-color: $noti-bg;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: $noti-bg;
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: $noti-bg-hover;
+}
+
+/* Backlight widget */
+.widget-backlight {
+  background-color: $noti-bg;
+  padding: 8px 8px 4px 8px;
+  margin: 8px 8px 0px 8px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Volume widget */
+.widget-volume {
+  background-color: $noti-bg;
+  padding: 4px 8px 8px 8px;
+  margin: 0px 8px 8px 8px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+/*** Notifications ***/
+/* Notifications text */
+.widget-title {
+  margin: 8px;
+  font-size: 1.5rem;
+}
+
+/* Clear all button */
+.widget-title > button {
+  font-size: initial;
+  color: white;
+  text-shadow: none;
+  background: $noti-bg;
+  border: 1px solid $border;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+.widget-title > button:hover {
+  background: $noti-bg-hover;
+}
+
+/* Do not disturb switch */
+.widget-dnd {
+  margin: 8px;
+  font-size: 1.1rem;
+  box-shadow: none;
+}
+
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 12px;
+  background: $noti-bg;
+  border: 1px solid $border;
+}
+
+.widget-dnd > switch:checked {
+  background: $bg-selected;
+}
+
+.widget-dnd > switch slider {
+  background: $noti-bg-hover;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+/* List of notifications */
+.control-center-list {
+}
+

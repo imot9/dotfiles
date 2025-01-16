@@ -15,12 +15,11 @@
     "clock",
   ],
   "modules-right": [
-    "group/hardware",
     "custom/updates",
     "pulseaudio",
     "network",
     "battery",
-    "custom/power",
+    "custom/control",
   ],
 
   // Modules
