@@ -1,19 +1,21 @@
 {
-  /* Modules - left */
-  "custom/arch" : {
-    "format" : "󰣇",
-    "tooltip" : false,
-  },
-
   "hyprland/workspaces": {
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{name}",
+    "format": "{icon}",
     "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
       "urgent": "",
-      "active": "",
-      "default": ""
+      "active": "󱓻",
     },
   },
 
@@ -21,6 +23,7 @@
   "clock": {
     "format": "  {:%I:%M %p}",
     "format-alt": "{:%A, %B %d, %Y (%R)}",
+    "tooltip" : false,
   },
 
   /* Modules - right */
@@ -30,14 +33,24 @@
     "return-type": "json",
     "exec": "~/.config/scripts/updates.sh",
     "interval": 1800,
+    "tooltip": false,
   },
   
+  "group/status": {
+		"orientation": "horizontal",
+		"modules": [
+			"pulseaudio",
+			"network",
+			"battery",
+		]
+	},
+
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon}  {volume}% {format_source}",
-    "format-bluetooth-muted": "   {icon} {format_source}",
-    "format-muted": "   {format_source}",
-    "format-source": "  {volume}%",
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": " ",
+    "format-muted": " ",
+    "format-source": "",
     "format-source-muted": " ",
     "format-icons": {
       "headphone": " ",
@@ -49,12 +62,13 @@
   },
 
   "network": {
-    "format-wifi": "   {signalStrength}%",
-    "format-ethernet": "   {ipaddr}/{cidr}",
-    "tooltip-format": "  {ifname} via {gwaddr}",
-    "format-linked": "  {ifname} (No IP)",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-wifi": "{icon}",
+    "format-icons" : [" "], 
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{signalStrength}%",
+
+    "format-ethernet": "   {ipaddr}/{cidr}",
+    "format-linked": "   {ifname} (No IP)",
   },
 
   "battery": {
@@ -62,14 +76,11 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
-    "format-full": "{icon}  {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
+    "format": "{icon}",
     "format-icons": [" ", " ", " ", " ", " "]
   },
 
-  "custom/control": {
+  "custom/menu": {
     "tooltip": false,
     "format": "",
     "return-type": "json",
