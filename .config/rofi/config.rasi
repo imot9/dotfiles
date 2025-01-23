@@ -25,15 +25,15 @@ window {
     padding:                      0px;
     margin:                       0px; 
     color:                        #FFFFFF;
-    border:                       3px;
+    border:                       1px;
     border-color:                 @color11;
     cursor:                       "default";
     transparency:                 "real";
-    location:                     northeast;
-    anchor:                       northeast;
+    location:                     center;
+    anchor:                       center;
     fullscreen:                   false;
     enabled:                      true;
-    border-radius:                2em;
+    border-radius:                5px;
     background-color:             @background;
 }
 
@@ -125,7 +125,7 @@ mode-switcher {
 
 button {
     cursor:                      pointer;
-    border-radius:               2em;
+    border-radius:               5px;
     background-color:            @background;
     text-color:                  @foreground;
 }
@@ -143,13 +143,13 @@ element {
     cursor:                      pointer;
     background-color:            transparent;
     text-color:                  @foreground;
-    border-radius:               1.1em;
+    border-radius:               5px;
 }
 
 element selected.normal {
     background-color:            @color11;
     text-color:                  @foreground;
-    border-radius:               1.5em;
+    border-radius:               5px;
 }
 
 element normal.normal {
