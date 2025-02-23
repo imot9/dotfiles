@@ -169,19 +169,17 @@ $noti-urgent: #BF616A;
 /* Backlight widget */
 .widget-backlight {
   background-color: $noti-bg;
-  padding: 8px 8px 4px 8px;
-  margin: 8px 8px 0px 8px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  padding: 8px 8px 8px 8px;
+  margin: 8px 8px 8px 8px;
+  border-radius: 5px;
 }
 
 /* Volume widget */
 .widget-volume {
   background-color: $noti-bg;
-  padding: 4px 8px 8px 8px;
-  margin: 0px 8px 8px 8px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  padding: 8px 8px 8px 8px;
+  margin: 8px 8px 8px 8px;
+  border-radius: 5px;
 }
 
 .floating-notifications {
