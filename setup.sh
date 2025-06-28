@@ -16,7 +16,6 @@ fi
 
 # python
 sudo pacman -S --noconfirm python python-pip
-python -m ensurepip --default-pip
 
 # basic packages
 sudo pacman -S --noconfirm \
@@ -56,26 +55,25 @@ sudo pacman -S --noconfirm \
   rofi-wayland \
   firefox
 
-
 # hide .desktop files in rofi
 sudo pacman -S --noconfirm gum
 
-echo "Select the .desktop files you want to keep visible in the Rofi app launcher:"
-all_files=(/usr/share/applications/*.desktop)
-selected_files=$(printf "%s\n" "${all_files[@]}" | gum choose --no-limit)
+mkdir -p ~/.local/share/applications
+cp /usr/share/applications/*.desktop ~/.local/share/applications/
 
-if [[ -z "$selected_files" ]]; then
-    echo "No files selected. Exiting."
-    exit 1
-fi
+echo "Select the .desktop files you want to keep visible (space to select):"
+selected_files=$(ls ~/.local/share/applications/*.desktop | gum choose --no-limit)
 
-for file in "${all_files[@]}"; do
+for file in ~/.local/share/applications/*.desktop; do
     if [[ ! "$selected_files" =~ "$file" ]]; then
-        if ! grep -q "NoDisplay=true" "$file"; then
-            echo "NoDisplay=true" >> "$file"
-            echo "Hidden: $file"
-        fi
+        sed -i '/NoDisplay=true/d' "$file"
+        echo "NoDisplay=true" >> "$file"
+        echo "Hidden: $file"
     else
         echo "Kept: $file"
     fi
 done
+
+stow .
+wal -q -i ~/.config/backgrounds/default.jpg
+
