@@ -2,6 +2,15 @@
 
 set -e
 
+DOTFILES_DIR=~/dotfiles
+if [[ "$(pwd)" != "$DOTFILES_DIR" ]]; then
+    echo "Changing to $DOTFILES_DIR..."
+    cd "$DOTFILES_DIR" || {
+        echo "Error: Cannot change to $DOTFILES_DIR. Ensure it exists."
+        exit 1
+    }
+fi
+
 # shell
 sudo pacman -S --noconfirm zsh
 chsh -s $(which zsh)
