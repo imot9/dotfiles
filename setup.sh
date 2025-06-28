@@ -77,3 +77,8 @@ done
 stow .
 wal -q -i ~/.config/backgrounds/default.jpg
 
+echo "Removing orphan packages ..."
+sudo pacman -Rns $(pacman -Qtdq)
+
+echo "Cleaning cache ..."
+sudo pacman -Scc
