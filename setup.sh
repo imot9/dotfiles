@@ -1,19 +1,25 @@
 #!/bin/bash
 
+set -e
+
 # shell
-sudo pacman -S zsh
+sudo pacman -S --noconfirm zsh
 chsh -s $(which zsh)
 
 # yay
-sudo pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay && makepkg -si
-cd .. && rm -rf yay
+if ! command -v yay &>/dev/null; then
+    sudo pacman -S --needed --noconfirm git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    cd yay && makepkg -si --noconfirm
+    cd .. && rm -rf yay
+fi
 
+# python
+sudo pacman -S --noconfirm python python-pip
 python -m ensurepip --default-pip
 
 # basic packages
-sudo pacman -S \
+sudo pacman -S --noconfirm \
   less \
   neovim \
   vi \
@@ -31,7 +37,7 @@ sudo pacman -S \
   fastfetch \
   htop
 
-yay -S \
+yay -S --noconfirm \
   oh-my-posh \
   dart-sass \
   waypaper \
@@ -40,7 +46,7 @@ yay -S \
   python-pywal16
 
 # hypr and more
-sudo pacman -S \
+sudo pacman -S --noconfirm \
   hyprland \
   hyprpaper \
   hyprlock \
@@ -50,24 +56,26 @@ sudo pacman -S \
   rofi-wayland \
   firefox
 
-# list of files to keep in rofi app launcher
-exclude_files=(
-  "firefox.desktop"
-  "htop.desktop"
-  "kitty.desktop"
-  "nvim.desktop"
-  "nvidia-settings.desktop"
-  "waypaper.desktop"
-)
 
-for file in /usr/share/applications/*.desktop; do
-  file_name=$(basename "$file")
-  
-  if [[ ! " ${exclude_files[@]} " =~ " $file_name " ]]; then
-    if ! grep -q "NoDisplay=true" "$file"; then
-      echo "NoDisplay=true" >> "$file"
-      echo "Updated: $file"
+# hide .desktop files in rofi
+sudo pacman -S --noconfirm gum
+
+echo "Select the .desktop files you want to keep visible in the Rofi app launcher:"
+all_files=(/usr/share/applications/*.desktop)
+selected_files=$(printf "%s\n" "${all_files[@]}" | gum choose --no-limit)
+
+if [[ -z "$selected_files" ]]; then
+    echo "No files selected. Exiting."
+    exit 1
+fi
+
+for file in "${all_files[@]}"; do
+    if [[ ! "$selected_files" =~ "$file" ]]; then
+        if ! grep -q "NoDisplay=true" "$file"; then
+            echo "NoDisplay=true" >> "$file"
+            echo "Hidden: $file"
+        fi
+    else
+        echo "Kept: $file"
     fi
-  fi
 done
-
