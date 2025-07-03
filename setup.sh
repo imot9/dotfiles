@@ -29,6 +29,8 @@ sudo pacman -S --noconfirm python python-pip
 # basic packages
 sudo pacman -S --noconfirm \
   less \
+  unzip \
+  ripgrep \
   neovim \
   vi \
   stow \
