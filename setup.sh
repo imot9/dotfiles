@@ -40,6 +40,9 @@ sudo pacman -S --noconfirm \
   lazygit \
   pamixer \
   pavucontrol \
+  pipewire \
+  wireplumber \
+  xdg-desktop-portal-hyprland \
   brightnessctl \
   cliphist \
   fzf \
