@@ -19,6 +19,7 @@ return {
       -- snippets & autocompletions
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+	  vim.deprecate = function() end
       local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
