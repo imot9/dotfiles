@@ -1,4 +1,4 @@
-.config/nvim/.luarc.json
-.config/ohmyposh/format.toml.bak
-.config/swaync/style.css
-.config/nvim/lazy-lock.json
+**/.luarc.json
+**/format.toml.bak
+**/swaync/style.css
+**/lazy-lock.json
