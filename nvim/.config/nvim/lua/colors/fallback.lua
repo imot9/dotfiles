@@ -38,10 +38,11 @@ function M.setup()
   vim.g.colors_name = "fallback"
 
   -- UI
+  vim.opt.cursorline = true
   highlight("Normal", { fg = colors.fg, bg = colors.bg })
   highlight("LineNr", { fg = colors.gray })
   highlight("CursorLine", { bg = colors.bg_light })
-  highlight("CursorLineNr", { fg = colors.fg, bg = colors.bg_light })
+  highlight("CursorLineNr", { fg = colors.green, gui = "bold" })
   highlight("Visual", { bg = "#264f78" })
   highlight("Search", { bg = "#613214" })
   highlight("IncSearch", { bg = "#ff9800", fg = "#000000" })
