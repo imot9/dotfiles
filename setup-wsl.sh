@@ -17,7 +17,8 @@ sudo apt install -y \
     zsh \
     unzip \
     stow \
-    neovim 
+    neovim \
+    ripgrep
 
 chsh -s $(which zsh)
 rm -rf .bash_history .bash_logout .bashrc
@@ -28,4 +29,4 @@ sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
-stow -t ~ zsh-deb ohmyposh
+stow -t ~ zsh-deb ohmyposh nvim
