@@ -91,19 +91,22 @@ function M.setup()
   -- Tree-sitter
   highlight("@variable", { fg = colors.bright_cyan })
   highlight("@function", { fg = colors.yellow })
-  highlight("@keyword", { fg = colors.blue })
   highlight("@string", { fg = colors.orange })
   highlight("@number", { fg = colors.bright_green })
   highlight("@boolean", { fg = colors.blue })
   highlight("@comment", { fg = colors.green, gui = "italic" })
-  highlight("@type", { fg = colors.cyan })
-  highlight("@operator", { fg = colors.fg })
+  highlight("@operator", { fg = colors.fg })                      -- + - ! ...
 
-  -- Keywords (return, end, function, if, etc.) - Purple
+  -- Keywords
   highlight("@keyword", { fg = colors.purple })
   highlight("@keyword.function", { fg = colors.purple })
   highlight("@keyword.return", { fg = colors.purple })
-  highlight("@keyword.operator", { fg = colors.purple })
+  highlight("@keyword.operator", { fg = colors.purple })          -- sizeof, typeof, and, or, in ...
+
+  -- Types
+  highlight("@type", { fg = colors.cyan })
+  highlight("@type.builtin", { fg = colors.cyan })
+  highlight("@keyword.type", { fg = colors.cyan })
 end
 
 return M
