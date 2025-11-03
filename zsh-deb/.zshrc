@@ -1,6 +1,6 @@
 # aliases
 alias vim='nvim'
-alias ls='ls --color'
+alias ls='ls --hyperlink=auto --color'
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -62,7 +62,7 @@ bindkey "^p" history-search-backward
 bindkey "^n" history-search-forward
 
 # misc
-HISTSIZE=5000
+HISTSIZE=2000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase

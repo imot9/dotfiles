@@ -5,7 +5,7 @@ fi
 
 # aliases
 alias vim='nvim'
-alias ls='ls --color'
+alias ls='ls --hyperlink=auto --color'
 
 # init ZINIT
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git" 
@@ -57,7 +57,7 @@ bindkey "^p" history-search-backward
 bindkey "^n" history-search-forward
 
 # misc
-HISTSIZE=5000
+HISTSIZE=2000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
