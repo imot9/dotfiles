@@ -1,37 +1,37 @@
 return {
   {
-    "hrsh7th/cmp-nvim-lsp",
-  },
-  {
-    "hrsh7th/nvim-cmp",
+    "Saghen/blink.cmp",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "rafamadriz/friendly-snippets",
+    },
     config = function()
-      local cmp = require("cmp")
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            vim.snippet.expand(args.body)
-          end,
+      require("blink.cmp").setup({
+        fuzzy = { implementation = "prefer_rust_with_warning" },
+
+        keymap = {
+          preset = "default",
+          ["<C-Space>"] = { "show" },
+          ["<CR>"] = { "accept", "fallback" },
+          ["<Tab>"] = { "accept", "fallback" },
+          ["<C-e>"] = { "cancel" },
         },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
+
+        sources = {
+          default = { "lsp" },
         },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({
-            select = true,
-            behavior = cmp.ConfirmBehavior.Replace
-          }),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-        }, {
-            { name = "buffer" },
-          }),
+
+        completion = {
+          documentation = {
+            auto_show = true,
+            auto_show_delay_ms = 200,
+          }
+        },
+
+        -- optional
+        -- signature = { enabled = true }
       })
+
     end,
   },
 }

@@ -9,11 +9,8 @@ return {
       require("neo-tree").setup({
         window = {
           mappings = {
-            ["h"] = "", -- Unbind 'h'
-            ["j"] = "move_cursor_left", -- Remap 'j' to move left
-            ["k"] = "move_cursor_down", -- Remap 'k' to move down
-            ["l"] = "move_cursor_up", -- Remap 'l' to move up
-            [";"] = "move_cursor_right", -- Remap ';' to move right
+            ["l"] = "open",
+            ["h"] = "close_node",
           },
         },
       })

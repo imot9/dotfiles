@@ -16,18 +16,19 @@ return {
               filetype = "neo-tree",
               text = "File Explorer",
               text_align = "left",
-              separator = true
-            }
-          }
-        }
+              separator = true,
+            },
+          },
+        },
       })
 
-    for i = 1, 9 do
-      vim.keymap.set("n", "<A-" .. i .. ">", ":BufferLineGoToBuffer " .. i .. "<CR>", { silent = true })
-    end
+      -- LEADER+{1..9) to swap buffers
+      for i = 1, 9 do
+        vim.keymap.set("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>", { silent = true })
+      end
 
-    vim.keymap.set("n", "<leader>bp", ":BufferLineCyclePrev<CR>", { silent = true })
-    vim.keymap.set("n", "<leader>bn", ":BufferLineCycleNext<CR>", { silent = true })
+      -- ALT+BACKSPACE to exit current buffer
+      vim.keymap.set("n", "<A-BS>", "<Cmd>b# | bd #<CR>", { desc = "Buffer: Close Current File" })
     end,
-  }
+  },
 }
