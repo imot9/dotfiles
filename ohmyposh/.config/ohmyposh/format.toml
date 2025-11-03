@@ -9,12 +9,12 @@ final_space = true
   blue = '#6F8FAF' 
 
 [secondary_prompt]
-  template = '❱❱ '
+  template = ' ❱❱ '
   foreground = 'magenta'
   background = 'transparent'
 
 [transient_prompt]
-  template = '❱ '
+  template = ' ❱ '
   background = 'transparent'
   foreground_templates = ['{{ if gt .Code 0 }}p:red{{ end }}', '{{ if eq .Code 0 }}p:magenta{{ end }}']
 
@@ -24,7 +24,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '{{ .Path }}'
+    template = ' {{ .Path }}'
     foreground = 'p:blue'
     background = 'transparent'
     type = 'path'
@@ -68,7 +68,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '❱'
+    template = ' ❱'
     background = 'transparent'
     type = 'text'
     style = 'plain'
