@@ -3,6 +3,7 @@
   "logo": {
     "source": "arch_small",
     "padding": {
+      "left": 2,
       "top": 2
     }
   },
