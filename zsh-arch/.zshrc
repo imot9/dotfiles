@@ -74,7 +74,7 @@ export LC_ALL=en_US.UTF-8
 export PATH="$PATH:~/.local/bin"
 
 if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
-  exec Hyprland >/dev/null 2>&1
+  exec start-hyprland >/dev/null 2>&1
 fi
 
 fastfetch
