@@ -30,13 +30,13 @@ sudo pacman -S --noconfirm python python-pip
 sudo pacman -S --noconfirm \
   less \
   unzip \
-  ripgrep \
   neovim \
   vi \
   stow \
   ttf-firacode-nerd \
   ttf-font-awesome \
   kitty \
+  fdfind \
   lazygit \
   pamixer \
   pavucontrol \
