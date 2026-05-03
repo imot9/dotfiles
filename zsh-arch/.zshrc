@@ -5,8 +5,9 @@ fi
 
 # aliases
 alias vim='nvim'
-alias ls='ls --hyperlink=auto --color'
+alias ls='ls --color'
 alias fd=fdfind
+alias z=zoxide
 
 # init ZINIT
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git" 

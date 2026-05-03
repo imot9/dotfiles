@@ -48,6 +48,7 @@ sudo pacman -S --noconfirm \
   fzf \
   inxi \
   fastfetch \
+  zoxide \
   htop
 
 yay -S --noconfirm \
