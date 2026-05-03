@@ -32,6 +32,7 @@ sudo pacman -S --noconfirm \
   unzip \
   neovim \
   vi \
+  python-pipx \
   stow \
   ttf-firacode-nerd \
   ttf-font-awesome \

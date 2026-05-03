@@ -73,7 +73,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Pipx
-export PATH="$PATH:~/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
   exec start-hyprland >/dev/null 2>&1
