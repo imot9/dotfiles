@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-  wallpaper="~/.config/backgrounds/default.jpg"
+  wallpaper="$HOME/.config/backgrounds/default.jpg"
 else
   wallpaper="$1"
   killall -SIGUSR2 waybar
