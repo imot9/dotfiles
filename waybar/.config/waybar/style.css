@@ -18,7 +18,7 @@ window#waybar {
   background: @background;
   border-bottom: 0px solid #ffffff;
   transition-property: background;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 2px 2px 2px 2px;
   opacity: 1;
   transition-duration: .5s;
 }
@@ -36,20 +36,22 @@ window#waybar.empty #window {
   all: initial;
   padding: 5px 15px 5px 15px;
   margin: 6px 3px 6px 3px;
-  border-radius: 5px;
+  border-radius: 2px;
   background: @workspace;
 }
 
 #workspaces button:first-child {
   margin-left: 10px; /* avoid increasing the margin between buttons */
 }
-#workspaces button.active { }
+#workspaces button.active { 
+  background: @highlight;
+}
 
 /* Modules - middle */
 #clock {
   padding: 5px 15px 5px 15px;
   margin: 6px 3px 6px 3px;
-  border-radius: 5px;
+  border-radius: 2px;
   background: @highlight;
 }
 
@@ -57,27 +59,27 @@ window#waybar.empty #window {
 #custom-updates {
   padding: 5px 15px 5px 15px;
   margin: 6px 3px 6px 3px;
-  border-radius: 5px;
+  border-radius: 2px;
   background: @box1;
 }
 
 #group-status {
   padding: 5px 15px 5px 15px;
   margin: 6px 3px 6px 3px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 #pulseaudio {
   padding: 5px 15px 5px 15px;
   margin: 6px 3px 6px 3px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 #pulseaudio.m { }
 
 #network {
   padding: 5px 15px 5px 15px;
   margin: 6px 3px 6px 3px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 #network.ethernet { }
 #network.wifi { }
@@ -85,7 +87,7 @@ window#waybar.empty #window {
 #battery {
   padding: 5px 15px 5px 15px;
   margin: 6px 3px 6px 3px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 #battery.charging, #battery.plugged { }
 @keyframes blink { to { } }
@@ -101,7 +103,7 @@ window#waybar.empty #window {
 #custom-menu {
   padding: 5px 15px 5px 15px;
   margin: 6px 10px 6px 3px;
-  border-radius: 5px;
+  border-radius: 2px;
   background: @highlight;
 }
 
