@@ -22,13 +22,44 @@ return {
         },
       })
 
-      -- LEADER+{1..9) to swap buffers
+      -- ALT+{1..9}: jump to visible buffer by position
       for i = 1, 9 do
-        vim.keymap.set("n", "<leader>" .. i, ":BufferLineGoToBuffer " .. i .. "<CR>", { silent = true })
+        vim.keymap.set(
+          "n",
+          "<A-" .. i .. ">",
+          "<Cmd>BufferLineGoToBuffer " .. i .. "<CR>",
+          { silent = true, desc = "Buffer: Go to " .. i }
+        )
       end
 
-      -- ALT+BACKSPACE to exit current buffer
-      vim.keymap.set("n", "<A-BS>", "<Cmd>b# | bd #<CR>", { desc = "Buffer: Close Current File" })
-    end,
+      -- TAB / SHIFT+TAB: cycle through buffers
+      vim.keymap.set(
+        "n",
+        "<Tab>",
+        "<Cmd>BufferLineCycleNext<CR>",
+        { silent = true, desc = "Buffer: Next" }
+      )
+
+      vim.keymap.set(
+        "n",
+        "<S-Tab>",
+        "<Cmd>BufferLineCyclePrev<CR>",
+        { silent = true, desc = "Buffer: Previous" }
+      )
+
+      -- ALT+q: close current buffer
+      vim.keymap.set("n", "<A-q>", function()
+        local current = vim.api.nvim_get_current_buf()
+
+        -- Move to previous buffer in Bufferline's visible order
+        vim.cmd("BufferLineCyclePrev")
+
+        -- Delete the buffer we just left
+        vim.api.nvim_buf_delete(current, { force = false })
+      end, {
+        silent = true,
+        desc = "Buffer: Close Current File",
+      })
+    end
   },
 }
